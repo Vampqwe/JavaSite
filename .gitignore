@@ -1,0 +1,11 @@
+```
+# Compiled and build artifacts
+*.class
+target/
+
+# Logs and temp files
+*.log
+
+# Dependencies
+.m2/
+```

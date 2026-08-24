@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Легкий Java Движок</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        .info {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        code {
+            background: #e0e0e0;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        .api-test {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 8px;
+        }
+        button {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #1976D2;
+        }
+        #api-result {
+            margin-top: 10px;
+            font-family: monospace;
+            background: #fff;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 Легкий веб-движок на Java</h1>
+    
+    <div class="info">
+        <p>Добро пожаловать! Это стартовая страница вашего легкого веб-движка.</p>
+        <p>Текущие возможности:</p>
+        <ul>
+            <li>✅ Обслуживание статических файлов (HTML, CSS, JS, изображения)</li>
+            <li>✅ Маршрутизация запросов (REST API)</li>
+            <li>✅ Многопоточная обработка запросов</li>
+            <li>✅ Логгирование событий</li>
+            <li>✅ Возможность расширения через интерфейс RequestHandler</li>
+        </ul>
+        <p>Архитектура позволяет легко "утяжелить" движок, добавив:</p>
+        <ul>
+            <li>Поддержку сессий и куки</li>
+            <li>Шаблонизатор (например, Thymeleaf или FreeMarker)</li>
+            <li>Работу с базой данных (JDBC, JPA/Hibernate)</li>
+            <li>Аутентификацию и авторизацию</li>
+            <li>WebSocket для real-time общения</li>
+            <li>Кэширование и оптимизацию производительности</li>
+        </ul>
+    </div>
+
+    <div class="api-test">
+        <h3>Тестирование API</h3>
+        <p>Нажмите кнопку ниже, чтобы протестировать динамический маршрут <code>/api/hello</code>:</p>
+        <button onclick="testApi()">Вызвать API</button>
+        <div id="api-result">Результат появится здесь...</div>
+    </div>
+
+    <script>
+        async function testApi() {
+            try {
+                const response = await fetch('/api/hello');
+                const data = await response.json();
+                document.getElementById('api-result').textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                document.getElementById('api-result').textContent = 'Ошибка: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>
